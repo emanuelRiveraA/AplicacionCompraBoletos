@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Para arrancar la aplicacion para que aranque directamente del controlador-->
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	 version="3.1">
+    
+    <!--Configuracion de arranque de sistema-->
+    <servlet>
+        <servlet-name>IndexController</servlet-name>
+        <servlet-class>com.compraboletos.controller.IndexController</servlet-class>
+    </servlet>
+    
+    <servlet-mapping><!--Para recorrer el directorio-->
+        <servlet-name>default</servlet-name>
+        <url-pattern>/resources/**</url-pattern>
+    </servlet-mapping>
+    
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
